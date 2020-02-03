@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <%
 	Cookie[] cookies = request.getCookies();
@@ -18,7 +18,7 @@
 %>
 </head>
 <body>
-	<form name="login_frm" action="/erp/login.do" method="post">
+	<form name="login_frm" action="/erp/emp/login.do" method="post">
 		<table cellpadding="0" cellspacing=5 width="815" bgcolor=#f3f3f3
 			border=0>
 			<tr>
@@ -79,7 +79,7 @@
 																				style="display: inline"><label
 																					for="member_id_save"><input type="checkbox"
 																						name="member_id_save" id="member_id_save"
-																						value="T" <%if(id.length()!=0) %><%= "checked" %> />¾ÆÀÌµğÀúÀå</label> </span></td>
+																						value="T" <%if(id.length()!=0) %><%= "checked" %> />ì•„ì´ë””ì €ì¥</label> </span></td>
 																		</tr>
 																	</table>
 																</td>

@@ -3,7 +3,9 @@ package multi.erp.board;
 import java.util.List;
 
 public interface BoardService {
-	List<BoardVO> boardList();
+	//게시글 조회 - 전체조회 및 카테고리별 조회작업
+	List<BoardVO> boardList(String category);
+	//게시글등록
 	int txinsert(BoardVO board);
 	int insert(BoardVO board);
 	List<BoardVO> searchList(String search);

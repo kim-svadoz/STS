@@ -15,7 +15,20 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-
+	//자바스크립트에서 자바에서 발생한 데이터를 사용 - EL표현법
+	//${category} => request.getAttribute("category")
+	category = "${category}"; // 컨트롤러 요청하고 response될 때 값을 받아서 셋팅
+	<%-- category="<%=request.getAttribute("category")%>"; --%>
+	$(document).ready(function() {
+		//최초실행인 경우 category값이 없으니
+		if(category==""){
+			category="all";
+		}
+		$("#category").val(category).attr("selected", "selected");
+		$("#category").change(function() {
+			location.href="/erp/board/list.do?category="+encodeURI($(this).val());
+		});
+	});
 </script>
 </head>
 <body>
