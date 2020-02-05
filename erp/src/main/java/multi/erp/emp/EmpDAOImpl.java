@@ -19,13 +19,22 @@ public class EmpDAOImpl implements EmpDAO {
 	}
 	
 	@Override
+	public int insert(MemberVO user) {
+		return sqlSession.update("multi.erp.emp.insert", user);
+	}
+@Override
+	public boolean idCheck(String id) {
+		boolean result = false;
+		MemberVO user=  sqlSession.selectOne("multi.erp.emp.idcheck",id);
+		if(user!=null) {
+			result = true;
+		}
+		return result;
+	}
+	
+	@Override
 	public ArrayList<MemberVO> getTreeEmpList(String deptno) {
 		return null;
-	}
-
-	@Override
-	public int insert(MemberVO user) {
-		return 0;
 	}
 
 	@Override
@@ -53,10 +62,6 @@ public class EmpDAOImpl implements EmpDAO {
 		return 0;
 	}
 
-	@Override
-	public boolean idCheck(String id) {
-		return false;
-	}
 
 	@Override
 	public MemberVO findById(String id) {

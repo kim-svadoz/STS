@@ -31,6 +31,17 @@
 		<put-attribute name="content" value="/WEB-INF/board/boardlist.jsp"/>
 	</definition>
 	
+	<!-- 뷰 -->
+	<definition name="login/ok" extends="mainTemplate">
+		<put-attribute name="menu" value="/WEB-INF/menu/insa_menu.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/emp/mypage.jsp"/>
+	</definition>
+	
+	<definition name="emp/insert" extends="mainTemplate">
+	<put-attribute name="menu" value="/WEB-INF/menu/insa_menu.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/emp/register.jsp"/>
+	</definition>
+	
 	
 	
 </tiles-definitions>

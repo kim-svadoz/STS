@@ -30,7 +30,7 @@ public class EmpServiceImpl implements EmpService {
 
 	@Override
 	public boolean idCheck(String id) {
-		return false;
+		return dao.idCheck(id);
 	}
 
 	@Override

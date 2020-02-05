@@ -8,11 +8,29 @@
 <meta charset="UTF-8">
 	<title>Insert title here</title>
 	<script type="text/javascript">
-	
+		$(document).ready(function(){
+			$("#id").on("keyup", function(){
+				/*
+				- 자바스크립트에서 동기방식으로 요청하기 - 
+				location.href="/erp/emp/idCheck.do?id="+$("#id").val();
+				*/
+				/*
+				- Query에서 Ajax로 요청하기- get방식
+				 */
+				 // url : 요청 path
+				 // data : 파라미터 - json형식 {"name":"value";"name":"value"....}
+				 // succeess :ajax요청에서 성공적으로 데이터를 받아왔을 때 처리할 내용을 함수로 표현 
+				 $.get("/erp/emp/idCheck.do", 
+						 {"id":$("#id").val()}, 
+						 function(data) //응답데이터 
+						 {	$("#checkVal").text(data);
+				 }, "text")
+			})
+		})
 	</script>
  </head>
-	
 <body>
+	<%= request.getAttribute("info")%>
 	<div class="container-fluid">
 			
 			<form class="form-horizontal" 
@@ -63,7 +81,7 @@
 						<div class="col-sm-3">
 							<input type="text" id="id" name="id"
 								placeholder="사번" class="form-control" 
-								minlength="4"  >
+								minlength="4" onkeyup="">
 							
 						</div>
 						<span id="checkVal" style="color: red;"></span>
