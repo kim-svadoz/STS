@@ -187,7 +187,8 @@
 						<!-- 등급-->
 						<label class="control-label col-sm-2" for="grade">이메일</label>
 						<div class="col-sm-3">
-							<input type="text" id="email" name="email" 
+							<input type="text" id="ema
+							 il" name="email" 
 							placeholder="이메일"
 								class="form-control"  >
 
